@@ -1,14 +1,14 @@
 const messages = [
-    "Are you sure?",
-    "Really sure??",
-    "Are you positive?",
-    "Pookie please...",
-    "Just think about it!",
-    "If you say no, I will be really sad...",
-    "I will be very sad...",
-    "I will be very very very sad...",
-    "Ok fine, I will stop asking...",
-    "Just kidding, say yes please! ❤️"
+    "Beneran?",
+    "Benerannnnn?",
+    "Masasi gamauu?",
+    "Teken dongg",
+    "Ayoo, asik lohh",
+    "Aku sedih, kalo gamauu",
+    "Bakal sedih banget",
+    "Aku jajanin yang enakk",
+    "Yauda deh aku berenti nanya",
+    "WKWKWK becanda, iyain dongg ❤️"
 ];
 
 let messageIndex = 0;
@@ -25,3 +25,19 @@ function handleNoClick() {
 function handleYesClick() {
     window.location.href = "yes_page.html";
 }
+
+function handlePilihResto() {
+    window.location.href = "resto.html";
+}
+
+$(document).ready(function () {
+    $('.container').mouseenter(function () {
+        $('.card').stop().animate({
+            top: '-90px'
+        }, 'slow');
+    }).mouseleave(function () {
+        $('.card').stop().animate({
+            top: 0
+        }, 'slow');
+    });
+});
