@@ -41,3 +41,16 @@ $(document).ready(function () {
         }, 'slow');
     });
 });
+
+window.addEventListener('load', function() {
+    // Wait 2 seconds before fading out the preloader
+    setTimeout(function() {
+      const preloader = document.getElementById('preloader');
+      // Add Tailwind classes for transition and opacity change
+      preloader.classList.add('opacity-0', 'transition', 'duration-1000');
+      // After transition (1 second), remove the preloader from view
+      setTimeout(function() {
+        preloader.style.display = 'none';
+      }, 1000);
+    }, 2000);
+  });

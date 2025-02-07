@@ -1,48 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine?</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Be My Valentine?</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Additional CSS for the Preloader Pop-Up -->
+  <style>
+    /* Preloader Overlay */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #f9e3e3; /* Matches your body background */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    #preloader h1 {
+      font-size: 3em;
+      color: #d32f2f;
+      /* Simple pop-in animation */
+      animation: popIn 1s ease-out;
+    }
+    @keyframes popIn {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    /* Fade out the preloader */
+    .fade-out {
+      animation: fadeOut 1s ease-out forwards;
+    }
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      100% { opacity: 0; visibility: hidden; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Will you be my Valentine?</h1>
-        <div class="buttons">
-            <button class="yes-button" onclick="handleYesClick()">Yes</button>
-            <button class="no-button" onclick="handleNoClick()">No</button>
-        </div>
-        
+  <!-- Preloader Pop-Up -->
+  <div id="preloader">
+    <h1>HELLOOOO</h1>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Will you be my Valentine?</h1>
+    <div class="buttons">
+      <button class="yes-button" onclick="handleYesClick()">Yes</button>
+      <button class="no-button" onclick="handleNoClick()">No</button>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <script src="script.js"></script>
-    <div class="container">  
-        <div class="valentines">
-          <div class="envelope"></div>
-          <div class="front"></div>
-          <div class="card">
-          <div class="gif_container w-5 h-auto">
-                <img src="jyboba-unscreen.gif" alt="Cute GIF" class="w-5 h-auto">
-          </div> 
-          <div class="heart"</div>
-          </div>
-          <div class="hearts">
-            <div class="one"></div>
-            <div class="two"></div>
-            <div class="three"></div>
-            <div class="four"></div>
-            <div class="five"></div>
-          </div>
-        </div>
-        </div>
-        <div class="shadow"></div>
-        </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <script src="script.js"></script>
+  <div class="container">  
+    <div class="valentines">
+      <div class="envelope"></div>
+      <div class="front"></div>
+      <div class="card">
+        <div class="gif_container w-5 h-auto">
+          <img src="jyboba-unscreen.gif" alt="Cute GIF" class="w-5 h-auto">
+        </div> 
+        <div class="heart"></div>
+      </div>
+      <div class="hearts">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <div class="four"></div>
+        <div class="five"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+  </body>
+
+  <!-- Preloader Fade-Out Script -->
+  <script>
+    window.addEventListener('load', function() {
+      // Wait 2 seconds before starting the fade-out
+      setTimeout(function() {
+        const preloader = document.getElementById('preloader');
+        preloader.classList.add('fade-out');
+      }, 2000);
+    });
+  </script>
 </body>
 </html>
